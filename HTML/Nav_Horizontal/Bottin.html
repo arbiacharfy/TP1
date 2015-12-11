@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Bottin</title>
+		<meta name="description" content="">
+		<meta name="author" content="Arbia CHARFI">
+		<link rel="stylesheet" type="text/css" href="../../DataTables-1.10.10/media/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" href="../../CSS/style.css">
+		<link rel="stylesheet" type="text/css" href="../../CSS/styleBottin.css">
+		
+		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../../DataTables-1.10.10/media/js/jquery.dataTables.min.js"></script>
+
+		<script >
+			$(document).ready(function() {
+				$('table').eq(0).DataTable();
+			});
+
+		</script>
+
+	</head>
+	<!-- ○ Bottin qui affichera la liste des employés dans une table de
+	5 colonnes : nom, prénom, fonction, téléphone et courriel. On
+	utilisera le plugin Datatables pour afficher cette table (Suggestion
+	: utilisation en Zero configuration). La table des
+	employés sera constitué à partir des données se trouvant dans
+	localStorage  -->
+
+	<body id="pageAcceuil">
+		<div class="container">
+			<header id="headerAcceuil">
+				<div>
+					<a href="../PageAcceuil.html"  target="_self"><img src="../../images/logo.jpg"  width="100px" height="80px"/></a>
+				</div>
+
+				<nav id"header_Nav">
+
+					<li >
+						<a href="Connexion.html">Connexion</a>
+					</li>
+					|
+					<li>
+						<a href="#">Bottin</a>
+					</li>
+					|
+					<li>
+						<a href="Contact.html">Contact</a>
+					</li>
+				</nav>
+
+			</header>
+
+			<div id="sub_container">
+				<div id="NavVerticale">
+					<section id="NavProduits">
+						<nav >
+
+							<ul>
+								<li >
+									<a href="../PageAcceuil.html">Page d'acceuil</a>
+								</li>
+
+								<li>
+									<a href="../Categories/Apple.html">Apple</a>
+								</li>
+								<li>
+									<a href="../Categories/Samsung.html">Samsung</a>
+								</li>
+								<li>
+									<a href="../Categories/Asus.html">Asus</a>
+								</li>
+								<li>
+									<a href="../Categories/Dell.html">Dell</a>
+								</li>
+								<li>
+									<a href="../Categories/HP.html">HP</a>
+								</li>
+
+							</ul>
+						</nav>
+					</section>
+
+				</div>
+				<div id="monIframe" name="moniframe">
+					<!-- <div id="bottin" class="CSSTableGenerator"> -->
+					<div  >
+
+						<table >
+							<thead>
+								<tr>
+									<th>Nom et Prenom de l'employe</th>
+									<th>Fonction</th>
+									<th>Telephone</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="mailto:arbia.charfi@yahoo.ca" > Arbia CHARFI</a></td>
+									<td >Programmeuse</td>
+									<td>514-999-9999</td>
+								</tr>
+								<tr>
+									<td><a href="mailto:arbia.charfi@yahoo.ca" > Andolsi Dina</a></td>
+									<td>support Technique</td>
+									<td>514-888-8888</td>
+								</tr>
+								<tr>
+									<td><a href="mailto:arbia.charfi@yahoo.ca" > Andolsi Lina</a></td>
+									<td>Ingenieur</td>
+									<td>514-777-7777</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								
+							</tfoot>
+						</table>
+
+					</div>
+
+				</div>
+
+			</div>
+			<footer>
+				<div id="footer">
+					<div>
+						Ce site est developpe dans le cadre du cours <a href="http://www.etudier.uqam.ca/cours?sigle=INF2005" target="_blank">INF2005</a> de l'<a href="http://www.uqam.ca" target="_blank">UQAM</a>
+					</div>
+					<div>
+						&copy; Copyright  by Arbia CHARFI<a href="mailto:arbia.charfi@yahoo.ca" > Clic ici pour m'envoyer un email </a>
+					</div>
+				</div>
+
+			</footer>
+		</div>
+	</body>
+</html>

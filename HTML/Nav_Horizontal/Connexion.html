@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Connexion</title>
+		<meta name="description" content="">
+		<meta name="author" content="Arbia CHARFI">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../../CSS/style.css">
+		<link rel="stylesheet" type="text/css" href="../../CSS/styleConnexion.css">
+		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				
+				$("#sub_container").hide();			
+				$("#btSeConnecter").click(function() {
+					
+					if($("#txtLogin").val() == "admin" && $("#txtPassword").val() == "inf2005"){						
+						$("#sub_container").show();
+						
+					}
+					
+				});
+
+			});
+
+		</script>
+
+	</head>
+
+	<body id="pageAcceuil">
+		<div class="container">
+			<header id="headerAcceuil">
+				<div>
+					<a href="../PageAcceuil.html"  target="_self"><img src="../../images/logo.jpg"  width="100px" height="80px"/></a>
+				</div>
+
+				<nav id"header_Nav">
+
+					<li class="css3">
+						<a href="#">Connexion</a>
+					</li>
+					|
+					<li class="tutoriels">
+						<a href="Bottin.html">Bottin</a>
+					</li>
+					|
+					<li class="livre">
+						<a href="Contact.html">Contact</a>
+					</li>
+				</nav>
+
+			</header>
+			<div id="connexion">
+				
+					Login :
+					<input id="txtLogin" type="text" name="fLogin">
+					<br>
+					Passeword :
+					<input id="txtPassword" type="text" name="fPassword">
+					<br>
+					<input id="btSeConnecter" type="submit" value="Se connecter" >
+				
+
+			</div>
+
+			<div id="sub_container">
+				<div id="NavVerticale">
+					<section id="NavProduits">
+						<nav >
+
+							<ul>
+								<li >
+									<a href="../PageAcceuil.html">Page d'acceuil</a>
+								</li>
+
+								<li>
+									<a href="../Categories/Apple.html">Apple</a>
+								</li>
+								<li>
+									<a href="../Categories/Samsung.html">Samsung</a>
+								</li>
+								<li>
+									<a href="../Categories/Asus.html">Asus</a>
+								</li>
+								<li>
+									<a href="../Categories/Dell.html">Dell</a>
+								</li>
+								<li>
+									<a href="../Categories/HP.html">HP</a>
+								</li>
+
+							</ul>
+						</nav>
+					</section>
+
+				</div>
+				<div id="monIframe" name="moniframe">
+					<div id="formulaireProduit">
+						<form action="../BaseDeDonnees/bdproduit.html" method="post" >
+
+							<fieldset>
+								<legend>
+									Produit :
+								</legend>
+								<label for="nomProduit">Nom du produit :</label>
+								<input type="text" name="nomProduit" size="20" maxlength="40" id="nomProduit" />
+								<label for="description">Description :</label>
+								<textarea name="description" id="description" cols="20" rows="4"> </textarea>
+								<label for="telecharger">Telecharger image :</label>
+								<input type="file" name="telecharger"/>
+
+							</fieldset>
+
+							<p>
+								<input type="submit" value="Envoyer" />
+								<input type="reset" value="Annuler" />
+							</p>
+
+						</form>
+
+					</div>
+
+					<div id="formulaireEmploye">
+						<form action="../BaseDeDonnees/bdemploye.html" method="post" >
+
+							<fieldset>
+								<legend>
+									Vos coordonnées :
+								</legend>
+								<label for="nom">Votre Nom :</label>
+								<input type="text" name="nom" size="20" maxlength="40" id="nom" />
+								<label for="prenom">Votre Prenom :</label>
+								<input type="text" name="prenom" size="20" maxlength="40" id="prenom" />
+								<label for="email">Votre email :</label>
+								<input type="email" name="email" size="20" maxlength="40" id="email"/>
+								<label for="fonction">Votre Prenom :</label>
+								<input type="text" name="fonction" size="20" maxlength="40" id="fonction" />
+								<label for="telechargerEmp">Telecharger photo :</label>
+								<input type="file" name="telechargerEmp" />
+							</fieldset>
+
+							<p>
+								<input type="submit" value="Envoyer" />
+								<input type="reset" value="Annuler" />
+							</p>
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<footer>
+				<div id="footer">
+					<div>
+						Ce site est developpe dans le cadre du cours <a href="http://www.etudier.uqam.ca/cours?sigle=INF2005" target="_blank">INF2005</a> de l'<a href="http://www.uqam.ca" target="_blank">UQAM</a>
+					</div>
+					<div>
+						&copy; Copyright  by Arbia CHARFI<a href="mailto:arbia.charfi@yahoo.ca" > Clic ici pour m'envoyer un email </a>
+					</div>
+				</div>
+
+			</footer>
+		</div>
+	</body>
+</html>

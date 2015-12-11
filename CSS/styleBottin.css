@@ -1,0 +1,46 @@
+table {
+	width: 600px;
+	margin: 10px;
+	padding: 10px;
+	-moz-border-radius-topright: 12px;
+	-webkit-border-top-right-radius: 12px;
+	border-top-right-radius: 12px;
+	font: 1em SansationBold, 'trebuchet ms', helvetica, arial, sans-serif ;
+
+}
+
+tr:hover td {
+	background-color: #ffaaaa;
+}
+td {
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #000000;
+	border-width: 0px 1px 1px 0px;
+	text-align: left;
+	padding: 7px;
+	font-size: 10px;
+	font-family: arial;
+	font-weight: normal;
+	color: #000000;
+	padding:15px;
+}
+
+th {
+	background: -o-linear-gradient(bottom, #ff5656 5%, #7f0000 100%);
+	background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff5656), color-stop(1, #7f0000) );
+	background: -moz-linear-gradient( center top, #ff5656 5%, #7f0000 100% );
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff5656", endColorstr="#7f0000");
+	background: -o-linear-gradient(top,#ff5656,7f0000);
+	background-color: #ff5656;
+	
+	text-align: center;
+	border-width: 0px 0px 1px 1px;
+	font: 1em SansationBold, 'trebuchet ms', helvetica, arial, sans-serif bold;	
+	color: #ffffff;
+	padding: 10px;
+	
+	
+}
+
+/* inspire du site http://www.csstablegenerator.com/**/

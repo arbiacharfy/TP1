@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>PageAcceuil</title>
+		<meta name="description" content="">
+		<meta name="author" content="Arbia CHARFI">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
+
+		<script>
+			$("#connexion").click(function() {
+				alert("Handler for .click() called.");
+			});
+			
+
+
+		</script>
+
+	</head>
+
+	<body id="pageAcceuil">
+		<div class="container">
+			<header id="headerAcceuil">
+				<div>
+					<a href="#"  target="_self"><img src="../images/logo.jpg"  width="100px" height="80px"/> <!-- <canvas id="canvasLogo">
+					your browser dosen't support canvas
+					</canvas> --> </a>
+				</div>
+
+				<nav id"header_Nav">
+					<li >
+						<a href="./Nav_Horizontal/Directeur.html"  target="moniframe">Directeur</a>
+					</li>
+					|
+					<li >
+						<!-- javascript:window.open('acceuil.html','_blank','width=800px, height=600px, resizable=no') -->
+						<a id="connexion" href="./Nav_Horizontal/Connexion.html">Connexion</a>
+					</li>
+					|
+					<li >
+						<a href="./Nav_Horizontal/Bottin.html">Bottin</a>
+					</li>
+					|
+					<li >
+						<a href="./Nav_Horizontal/Contact.html">Contact</a>
+					</li>
+				</nav>
+
+			</header>
+
+			<div id="sub_container">
+				<div id="NavVerticale">
+					<section id="NavProduits">
+						<nav >
+
+							<ul>
+								<li >
+									<a href="./Produits/OrdinateursPortables.html" target="moniframe">PC Portable</a>
+								</li>
+								<li >
+									<a href="./Produits/OrdinateursBureau.html" target="moniframe">Ordinateur</a>
+								</li>
+								<li >
+									<a href="./Produits/TelephoneCellulaire.html" target="moniframe">Portable</a>
+								</li>
+								<li>
+									<a href="./Produits/Ecouteurs.html" target="moniframe">Ecouteurs</a>
+								</li>
+								<li>
+									<a href="./Produits/Tablettes.html" target="moniframe">Tablettes</a>
+								</li>
+
+							</ul>
+						</nav>
+					</section>
+					<section>
+						<hr />
+					</section>
+					<section id="NavCategories">
+						<nav >
+							<ul>
+								<li>
+									<a href="./Categories/Apple.html">Apple</a>
+								</li>
+								<li>
+									<a href="./Categories/Samsung.html">Samsung</a>
+								</li>
+								<li>
+									<a href="./Categories/Asus.html">Asus</a>
+								</li>
+								<li>
+									<a href="./Categories/Dell.html">Dell</a>
+								</li>
+								<li>
+									<a href="./Categories/HP.html">HP</a>
+								</li>
+
+							</ul>
+						</nav>
+					</section>
+
+				</div>
+				<div id="monIframe" name="moniframe">
+					<iframe src="./Produits/OrdinateursPortables.html" id="iframePageAcceuil" name="moniframe">
+
+					</iframe>
+
+				</div>
+
+			</div>
+
+			<footer>
+				<div id="footer">
+					<div>
+						Ce site est developpe dans le cadre du cours <a href="http://www.etudier.uqam.ca/cours?sigle=INF2005" target="_blank">INF2005</a> de l'<a href="http://www.uqam.ca" target="_blank">UQAM</a>
+					</div>
+					<div>
+						&copy; Copyright  by Arbia CHARFI<a href="mailto:arbia.charfi@yahoo.ca" > Clic ici pour m'envoyer un email </a>
+					</div>
+				</div>
+
+			</footer>
+		</div>
+	</body>
+</html>

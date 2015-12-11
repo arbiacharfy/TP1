@@ -1,0 +1,24 @@
+#mainProduits {
+	height: 650px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 15px;
+}
+
+#produitFare, #produitFare {
+	margin: 15px;
+	
+}
+#mainProduits h2 {
+	font-family: serif; 
+	background: #E97878 none; 
+	color: white; 
+	border: 1px dotted #dddddd; 
+	padding: 0.3em; 
+	text-align: center; 
+	font: 1em SansationBold, 'trebuchet ms', helvetica, arial, sans-serif bold;
+	font-variant: small-caps;
+	letter-spacing: 0.06em;
+	
+}

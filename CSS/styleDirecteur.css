@@ -1,0 +1,37 @@
+/*Directeur*/
+
+#mainDirector {
+	height: 650px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 15px;
+}
+
+#leftDirector {
+	margin: 5px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+	text-align: left; /* centrage horizontal */
+	justify-content: center;
+	-webkit-justify-content: left;
+	-webkit-flex-align: stretch;
+	-ms-flex-align: stretch;
+	-webkit-align-items: stretch;
+}
+
+#rightDirector {
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	text-align: left; /* centrage horizontal */
+	justify-content: center;
+}
+p {
+	text-align: justify;
+	text-justify: inter-word;
+	margin: 10px;
+}
+
+

@@ -1,0 +1,94 @@
+.menu ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	list-style-type: none;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	color: white;
+	padding: 10.5px 11px;
+	background-color: #9A9F9F;
+	display: block;
+}
+
+.menu ul li a:visited {
+	color: white;
+}
+
+.menu ul li a:hover, .menu_simple ul li .current {
+	color: white;
+	background-color: #E97878;
+}
+#monIframe h1 {
+	font-family: serif; /* On se permet un changement de police : pas plus de deux par page, et à utiliser avec parcimonie (c'est le cas) */
+	background: #E97878 none; /* Fond du titre bleu (et sans image de fond) */
+	color: white; /*  Donc on utilise une police blanche pour que le texte soit visible */
+	border: 3px dotted #dddddd; /* On encadre le titre d'un bleu clair de 3 pixels de largeur */
+	padding: 0.3em; /* Espacement intérieur non nul pour que le texte ne colle pas à la bordure du cadre */
+	text-align: center; /* Le titre doit être centré ! */
+}
+
+figcaption {
+	position: relative;
+	display: block;
+	color: #000000;
+	font-weight: bold;
+	font: 1em SansationBold, 'trebuchet ms', helvetica, arial, sans-serif bold;
+	font-variant: small-caps;
+	letter-spacing: 0.06em;
+	text-align: center;
+}
+figure {
+	float: left;
+	display: block;
+	background: white;
+	margin: auto;
+	margin-top: 10px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+figcaption {
+	font-size: .8em;
+	padding: 6px 8px;
+	background: #dddddd;
+	display: block;
+	text-align: center;
+	font-family: georgia, serif;
+	font-style: italic;
+	border-radius: 0 0 7px 7px;
+	-moz-border-radius: 0 0 7px 7px;
+	-webkit-border-radius: 0 0 7px 7px;
+}
+figure img {
+	background: #E97878;
+	padding: 5px;
+}
+#sectionCategories section {
+	background: #eeeeee;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	text-align: center; /* centrage horizontal */
+	justify-content: center;
+	-webkit-justify-content: left;
+	-webkit-flex-align: stretch;
+	-ms-flex-align: stretch;
+	-webkit-align-items: stretch;
+}
+#monIframe article p {
+	font: 14px serif; /* Style et taille de la police de la page */
+	text-align: justify;
+	text-justify: inter-word;
+	margin: 10px;
+}
+
+article p:first-letter {/* Pour la première lettre de chaque paragraphes : */
+	font-size: x-large; /* Utiliser une police large */
+	font-weight: bold; /* Et grasse                 */
+	color: #DF3F3F;#iPhone1 a {
+	clear: both;
+}
+
