@@ -10,58 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="../../CSS/style.css">
 		<link rel="stylesheet" type="text/css" href="../../CSS/styleConnexion.css">
 		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../../JavaScript/connexion.js"></script>
 
-		<script>
-			function seDeconnecter() {
-				sessionStorage.removeItem('connecte');
-				$("#sub_container").hide();
-				$("#connexion").show();
-
-			}
-
-
-			$(document).ready(function() {
-				connecte = sessionStorage.getItem("connecte");
-				if ((connecte == "undefined") || (connecte == null)) {
-					$("#sub_container").eq(0).hide();
-					$("#connexion").eq(0).show();
-
-				} else {
-					$("#sub_container").show();
-					$("#connexion").hide();
-				}
-				
-				
-				$("#deconnecter").click(function() {
-					seDeconnecter();
-					
-				});
-
-				$("#btSeConnecter").click(function() {
-
-					//récupération des info du formulaire
-					login = $("#txtLogin").val();
-					pwd = $("#txtPassword").val();
-
-					if (pwd == "inf2005") {
-						console.log(pwd);
-						//si le mot de passe est bon
-						sessionStorage.setItem("connecte", "connecte");
-						$("#sub_container").show();
-						$("#connexion").hide();
-
-					} else {//mot de passe erroné
-						//supprimer la variable enregistré dans sessionStorage
-						sessionStorage.removeItem('connecte');
-						$("#sub_container").eq(0).hide();
-						$("#connexion").eq(0).show();
-					}
-
-				});
-
-			});
-
-		</script>
 
 	</head>
 
@@ -158,7 +108,7 @@
 					</div>
 
 					<div id="formulaireEmploye">
-						<form action="../BaseDeDonnees/bdemploye.html" method="post" >
+						<form action="#" method="post" >
 
 							<fieldset>
 								<legend>
@@ -170,14 +120,14 @@
 								<input type="text" name="prenom" size="20" maxlength="40" id="prenom" />
 								<label for="email">Votre email :</label>
 								<input type="email" name="email" size="20" maxlength="40" id="email"/>
-								<label for="fonction">Votre Prenom :</label>
+								<label for="fonction">Votre fonction :</label>
 								<input type="text" name="fonction" size="20" maxlength="40" id="fonction" />
 								<label for="telechargerEmp">Telecharger photo :</label>
 								<input type="file" name="telechargerEmp" />
 							</fieldset>
 
 							<p>
-								<input type="submit" value="Envoyer" />
+								<input id="btnEnregistrerEmploye" type="submit" value="Envoyer" />
 								<input type="reset" value="Annuler" />
 							</p>
 
