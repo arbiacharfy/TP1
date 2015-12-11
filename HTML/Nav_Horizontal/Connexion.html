@@ -6,22 +6,79 @@
 		<title>Connexion</title>
 		<meta name="description" content="">
 		<meta name="author" content="Arbia CHARFI">
-		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../../CSS/style.css">
 		<link rel="stylesheet" type="text/css" href="../../CSS/styleConnexion.css">
 		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
 
 		<script>
-			$(document).ready(function(){
-				
-				$("#sub_container").hide();			
+			var bd = null;
+			var bdjson = {
+
+				"users" : [{
+					"login" : "admin",
+					"pwd" : "inf2005"
+				}, {
+					"login" : "admin2",
+					"pwd" : "pwd2"
+				}]
+			};
+
+			bd = localStorage.getItem('bdjson');
+
+			bd = JSON.parse(bd);
+			//parsing de objet json
+
+			$(document).ready(function() {
+				connecte = sessionStorage.getItem("connecte");
+				if ((connecte == "undefined") || (connecte == null)) {
+					$("#sub_container").eq(0).css({
+						"display" : "none"
+					});
+					$("#connexion").eq(0).css({
+						"display" : "block"
+					});
+
+				} else {
+					$("#sub_container").css({
+						"display" : "block"
+					});
+					$("#connexion").css({
+						"display" : "none"
+					});
+				}
+
 				$("#btSeConnecter").click(function() {
-					
-					if($("#txtLogin").val() == "admin" && $("#txtPassword").val() == "inf2005"){						
-						$("#sub_container").show();
-						
+
+					//récupération des info du formulaire
+					login = $("#txtLogin").val();
+					pwd = $("#txtPassword").val();
+
+					users = bd.users;
+					pwd == users[login];
+
+					if (pwd == users[login]) {
+						console.log(pwd);
+						//si le mot de passe est bon
+						sessionStorage.setItem("connecte", "connecte");
+						$("#sub_container").css({
+							"display" : "block"
+						});
+						$("#connexion").css({
+							"display" : "none"
+						});
+
+					} else {//mot de passe erroné
+						//supprimer la variable enregistré dans sessionStorage
+						sessionStorage.removeItem('connecte');
+						$("#sub_container").eq(0).css({
+							"display" : "none"
+						});
+						$("#connexion").eq(0).css({
+							"display" : "block"
+						});
 					}
-					
+
 				});
 
 			});
@@ -54,15 +111,14 @@
 
 			</header>
 			<div id="connexion">
-				
-					Login :
-					<input id="txtLogin" type="text" name="fLogin">
-					<br>
-					Passeword :
-					<input id="txtPassword" type="text" name="fPassword">
-					<br>
-					<input id="btSeConnecter" type="submit" value="Se connecter" >
-				
+
+				Login :
+				<input id="txtLogin" type="text" name="fLogin">
+				<br>
+				Passeword :
+				<input id="txtPassword" type="text" name="fPassword">
+				<br>
+				<input id="btSeConnecter" type="submit" value="Se connecter" >
 
 			</div>
 
