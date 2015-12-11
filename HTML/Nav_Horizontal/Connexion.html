@@ -12,41 +12,30 @@
 		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
 
 		<script>
-			var bd = null;
-			var bdjson = {
+			function seDeconnecter() {
+				sessionStorage.removeItem('connecte');
+				$("#sub_container").hide();
+				$("#connexion").show();
 
-				"users" : [{
-					"login" : "admin",
-					"pwd" : "inf2005"
-				}, {
-					"login" : "admin2",
-					"pwd" : "pwd2"
-				}]
-			};
+			}
 
-			bd = localStorage.getItem('bdjson');
-
-			bd = JSON.parse(bd);
-			//parsing de objet json
 
 			$(document).ready(function() {
 				connecte = sessionStorage.getItem("connecte");
 				if ((connecte == "undefined") || (connecte == null)) {
-					$("#sub_container").eq(0).css({
-						"display" : "none"
-					});
-					$("#connexion").eq(0).css({
-						"display" : "block"
-					});
+					$("#sub_container").eq(0).hide();
+					$("#connexion").eq(0).show();
 
 				} else {
-					$("#sub_container").css({
-						"display" : "block"
-					});
-					$("#connexion").css({
-						"display" : "none"
-					});
+					$("#sub_container").show();
+					$("#connexion").hide();
 				}
+				
+				
+				$("#deconnecter").click(function() {
+					seDeconnecter();
+					
+				});
 
 				$("#btSeConnecter").click(function() {
 
@@ -54,29 +43,18 @@
 					login = $("#txtLogin").val();
 					pwd = $("#txtPassword").val();
 
-					users = bd.users;
-					pwd == users[login];
-
-					if (pwd == users[login]) {
+					if (pwd == "inf2005") {
 						console.log(pwd);
 						//si le mot de passe est bon
 						sessionStorage.setItem("connecte", "connecte");
-						$("#sub_container").css({
-							"display" : "block"
-						});
-						$("#connexion").css({
-							"display" : "none"
-						});
+						$("#sub_container").show();
+						$("#connexion").hide();
 
 					} else {//mot de passe erroné
 						//supprimer la variable enregistré dans sessionStorage
 						sessionStorage.removeItem('connecte');
-						$("#sub_container").eq(0).css({
-							"display" : "none"
-						});
-						$("#connexion").eq(0).css({
-							"display" : "block"
-						});
+						$("#sub_container").eq(0).hide();
+						$("#connexion").eq(0).show();
 					}
 
 				});
@@ -172,7 +150,7 @@
 
 							<p>
 								<input type="submit" value="Envoyer" />
-								<input type="reset" value="Annuler" />
+								<input id="deconnecter" type="reset" value="Annuler" />
 							</p>
 
 						</form>

@@ -1,6 +1,7 @@
 #pageAcceuil {
 	width: 100%;
 	background-color: black;
+	height: 700px;
 }
 
 /* entete */
@@ -53,6 +54,7 @@ header li a:hover, header li a:active, header li a:focus, #NavVerticale li a:hov
 	background-color: #717C7A;
 	text-align: center; /* centrage horizontal */
 	width: 900px;
+	min-height : 900px;
 	margin: 0 auto 0 auto;
 	display: -webkit-flex;
 	display: flex;
