@@ -1,4 +1,7 @@
 // ******************** Formulaire de Connexion *************************/
+
+var bd = null;
+//simulation base de donnees avec localStorage et json
 function seDeconnecter() {
 	sessionStorage.removeItem('connecte');
 	$("#sub_container").hide();
@@ -108,44 +111,44 @@ function SeConnecter() {
 
 function enregistrer_Employe() {
 	var nom = $('input[name="nom"]:first').val();
-		var prenom = $('input[name="prenom"]:first').val();
-		var email = $('input[name="email"]:first').val();
-		var fonction = $('input[name="fonction"]:first').val();
-		var file = $('input[name="telechargerEmp"]:first').val();
+	var prenom = $('input[name="prenom"]:first').val();
+	var email = $('input[name="email"]:first').val();
+	var fonction = $('input[name="fonction"]:first').val();
+	var file = $('input[name="telechargerEmp"]:first').val();
 
-		if ((nom == "undefined") || (nom == null) || (email == "undefined") || (email == null) || (prenom == "undefined") || (prenom == null)) {
-			alert("Merci de remplir les champs manquants");
-			retourn(false);
-			//on ne change rien si
-		}
-		//methode 1
-		bd = localStorage.getItem('bdjson');
-		if ((bd == "undefined") || (bd == null)) {//ici on doit initialiser la bd
-			var bdjson = {
-				"descriptions" : []
+	if ((nom == "undefined") || (nom == null) || (email == "undefined") || (email == null) || (prenom == "undefined") || (prenom == null)) {
+		alert("Merci de remplir les champs manquants");
+		retourn(false);
+		//on ne change rien si
+	}
+	//methode 1
+	bd = localStorage.getItem('bdjson');
+	if ((bd == "undefined") || (bd == null)) {//ici on doit initialiser la bd
+		var bdjson = {
+			"descriptions" : []
 
-			};
-
-			localStorage.setItem('bdjson', JSON.stringify(bdjson));
-			bd = bdjson;
-
-		} else {
-			bd = JSON.parse(bd);
-			//parsing de objet json
-		}
-		var descJsonObjects = bd.descriptions;
-		var jsonObject = {//creation de json
-			"nom" : nom,
-			"prenom" : prenom,
-			"email" : email,
-			"fonction" : fonction,
-			"file" : file
 		};
-		descJsonObjects.push(jsonObject);
-		//ajout dans le tableau des description
-		bd.descriptions = descJsonObjects;
-		localStorage.setItem('bdjson', JSON.stringify(bd));
-		return (true);
+
+		localStorage.setItem('bdjson', JSON.stringify(bdjson));
+		bd = bdjson;
+
+	} else {
+		bd = JSON.parse(bd);
+		//parsing de objet json
+	}
+	var descJsonObjects = bd.descriptions;
+	var jsonObject = {//creation de json
+		"nom" : nom,
+		"prenom" : prenom,
+		"email" : email,
+		"fonction" : fonction,
+		"file" : file
+	};
+	descJsonObjects.push(jsonObject);
+	//ajout dans le tableau des description
+	bd.descriptions = descJsonObjects;
+	localStorage.setItem('bdjson', JSON.stringify(bd));
+	return (true);
 
 }
 
@@ -156,15 +159,14 @@ $(document).ready(function() {
 	$("#btSeConnecter").click(function() {
 
 		return SeConnecter();
-		
 
 	});
 	$("#btnEnregistrerEmploye").click(function() {
-		
 
 		return enregistrer_Employe();
-		
 
 	});
+
+	
 
 });

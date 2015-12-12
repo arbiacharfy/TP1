@@ -8,27 +8,40 @@
 		<meta name="author" content="Arbia CHARFI">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../CSS/style.css">
-		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
-		
+		<script type="application/x-javascript">
+			function draw() {
+				var canvas = document.getElementById("canvasLogo");
+				var ctx = canvas.getContext("2d");
 
-		<script>
-			$("#connexion").click(function() {
-				alert("Handler for .click() called.");
-			});
-			
+				ctx.fillStyle = "red";
 
+				ctx.beginPath();
+				ctx.moveTo(30, 30);
+				ctx.lineTo(150, 150);
+				ctx.bezierCurveTo(60, 70, 60, 70, 70, 150);
+				ctx.lineTo(30, 30);
+				
+				ctx.fillStyle = "red";
+            ctx.font = "20pt Helvetica";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("Informatique", 100 , 100);
+				ctx.fill();
+			}
 
 		</script>
 
 	</head>
 
-	<body id="pageAcceuil">
+	<body id="pageAcceuil" onload="draw()">
 		<div class="container">
 			<header id="headerAcceuil">
 				<div>
-					<a href="#"  target="_self"><img src="../images/logo.jpg"  width="100px" height="80px"/> <!-- <canvas id="canvasLogo">
-					your browser dosen't support canvas
-					</canvas> --> </a>
+					<!-- <a href="#"  target="_self"> -->
+					<canvas id="canvasLogo" width="150" height="150">
+						your browser dosen't support canvas
+					</canvas>
+					<!-- </a> -->
 				</div>
 
 				<nav id"header_Nav">
@@ -98,7 +111,6 @@
 								<li>
 									<a href="./Categories/HP.html">HP</a>
 								</li>
-
 							</ul>
 						</nav>
 					</section>
