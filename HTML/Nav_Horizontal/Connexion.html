@@ -11,7 +11,9 @@
 		<link rel="stylesheet" type="text/css" href="../../CSS/styleConnexion.css">
 		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../../JavaScript/connexion.js"></script>
-
+		<script>
+			
+		</script>
 
 	</head>
 
@@ -83,7 +85,7 @@
 				</div>
 				<div id="monIframe" name="moniframe">
 					<div id="formulaireProduit">
-						<form action="../BaseDeDonnees/bdproduit.html" method="post" >
+						<form action="#" method="post" id="idFormProduit" >
 
 							<fieldset>
 								<legend>
@@ -91,15 +93,40 @@
 								</legend>
 								<label for="nomProduit">Nom du produit :</label>
 								<input type="text" name="nomProduit" size="20" maxlength="40" id="nomProduit" />
-								<label for="description">Description :</label>
-								<textarea name="description" id="description" cols="20" rows="4"> </textarea>
-								<label for="telecharger">Telecharger image :</label>
-								<input type="file" name="telecharger"/>
+								<label for="descriptionProduit">Description :</label>
+								<textarea name="descriptionProduit" id="descriptionProduit" cols="20" rows="4"> </textarea>
+								<label for="image">Image :</label>
+								<select name="imageProduit" id="imageProduit">
+									<option> selectionner une image</option>
+									<option value="../../images/apple_iPad_1.jpg">apple_iPad_1.jpg</option>
+									<option value="../../images/apple_iPhone_1.jpg">apple_iPhone_1.jpg</option>
+									<option value="../../images/Computer_1.png">apple_iPad_1.jpg</option>
+									<option value="../../images/computer_2.png">apple_iPad_1.jpg</option>
+									<option value="../../images/laptop_2.png">laptop_2.png</option>
+									<option value="../../images/laptop_1.png">laptop_1.png</option>
+									<option value="../../images/notebook_1.jpg">notebook_1.jpg</option>
+									<option value="../../images/tablet_2.jpg">tablet_2.jpg</option>
+									<option value="../../images/tablet_1.png">tablet_1.png</option>
+									<option value="../../images/earphones2.jpg">earphones2.jpg</option>
+									<option value="../../images/earphones_3.jpg">earphones_3.jpg</option>
+									<option value="../../images/earphone.jpg">earphone.jpg</option>
+
+								</select>
+								<label for="categorieProduit">Categorie :</label>
+								<select name="categorieProduit" id="categorieProduit">
+									<option> selectionner une Categorie</option>
+									<option value="Apple">Apple</option>
+									<option value="Asus">Asus</option>
+									<option value="Dell">Dell</option>
+									<option value="HP">HP</option>
+									<option value="Samsung">Samsung</option>
+								</select>
+								<br/>
 
 							</fieldset>
 
 							<p>
-								<input type="submit" value="Envoyer" />
+								<input type="submit" value="Enregistrer" id="enregistrerProduit"/>
 								<input id="deconnecter" type="reset" value="Annuler" />
 							</p>
 
