@@ -29,7 +29,37 @@
 				ctx.fillText("Informatique", 100, 100);
 				ctx.fill();
 			}
-	
+
+
+			$.support.cors = true;
+			$(document).ready(function() {
+
+				$.ajax({
+					type : "GET",
+					url : "../XML/directeurs.xml",
+					dataType : "xml",
+					isLocal : true,
+					error : function(error) {
+						alert("erreur telechargement du fichier XML");
+					},
+					
+					success : function(xml) {
+						var etuds = "<ol>";
+						$(xml).find("directeur").each(function(index) {
+							nom = $(this).find('nom').text();
+							prenom = $(this).find('prenom').text();
+							anneeDebut = $(this).find('anneeDebut').text();
+							anneeFin = $(this).find('anneeFin').text();
+							etuds = etuds + "<li> Nom :" + nom+" ; Prenom :  "+prenom+" ; Annee de Debut : "+anneeDebut+" ; Annee de fin : "+anneeFin+"</li></br>";
+						});
+						etuds = etuds + "</ol>";
+						$("#xxxxx").html("" + etuds + "");
+						
+					}
+				});
+
+			});
+
 		</script>
 
 	</head>
@@ -117,10 +147,9 @@
 					</section>
 
 				</div>
-					<div id="xxxxx"></div>
+					
 				<div id="monIframe" name="moniframe">
-					<iframe width="420" height="315" src="https://www.youtube.com/embed/dXi1FR8VEiA" frameborder="0" allowfullscreen id="iframePageAcceuil" name="moniframe"></iframe>
-
+					<div id="xxxxx"></div>
 				</div>
 			
 
@@ -135,7 +164,7 @@
 						&copy; Copyright  by Arbia CHARFI<a href="mailto:arbia.charfi@yahoo.ca" > Clic ici pour m'envoyer un email </a>
 					</div>
 					<div>
-						<a href="Historique.html" target="_blank">Historique</a>
+						<a href="./Categories/HP.html" target="_blank">Historique</a>
 					</div>
 						
 				</div>

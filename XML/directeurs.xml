@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<directeurs>
+	<directeur>
+		<nom>Charfi</nom>
+		<prenom>Arbia</prenom>
+		<anneeDebut>2013</anneeDebut>
+		<anneeFin>2015</anneeFin>		
+	</directeur>
+	<directeur>
+		<nom>andolsi</nom>
+		<prenom>Lina</prenom>
+		<anneeDebut>2002</anneeDebut>
+		<anneeFin>2013</anneeFin>		
+	</directeur>
+	<directeur>
+		<nom>Andolsi</nom>
+		<prenom>Dina</prenom>
+		<anneeDebut>2000</anneeDebut>
+		<anneeFin>2002</anneeFin>		
+	</directeur>
+</directeurs>
