@@ -21,10 +21,6 @@ function testConnexion() {
 		$("#connexion").hide();
 	}
 
-	// $("#deconnecter").click(function() {
-		// seDeconnecter();
-// 
-	// });
 }
 
 function SeConnecter() {
@@ -47,46 +43,58 @@ function SeConnecter() {
 	}
 }
 
+function validateEmail(email) {
+	var re = /\S+@\S+\.\S+/;
+	return re.test(email);
+}
+
 function enregistrer_Employe() {
 	var nom = $('input[name="nom"]:first').val();
 	var prenom = $('input[name="prenom"]:first').val();
 	var email = $('input[name="email"]:first').val();
 	var fonction = $('input[name="fonction"]:first').val();
 	var file = $('input[name="telechargerEmp"]:first').val();
+	var nomInter = nom.trim();
+	TestNom = ((nom == "undefined") || (nom == null) || (nom.trim().length === 0));
+	Testprenom = ((prenom == "undefined") || (prenom == null) || (prenom.trim().length === 0));
+	TestEmail = ((email == "undefined") || (email == null) || (email.trim().length === 0)) && (validateEmail(email));
 
-	if ((nom == "undefined") || (nom == null) || (email == "undefined") || (email == null) || (prenom == "undefined") || (prenom == null)) {
+	if (TestNom || Testprenom || TestEmail) {
 		alert("Merci de remplir les champs manquants");
-		retourn(false);
+		return (false);
 		//on ne change rien si
+	} else {
+
+		bd = localStorage.getItem('bdjson');
+		if ((bd == "undefined") || (bd == null)) {//ici on doit initialiser la bd
+			var bdjson = {
+				"descriptions" : []
+
+			};
+
+			localStorage.setItem('bdjson', JSON.stringify(bdjson));
+			bd = bdjson;
+
+		} else {
+			bd = JSON.parse(bd);
+			//parsing de objet json
+		}
+		var descJsonObjects = bd.descriptions;
+		var jsonObject = {//creation de json
+			"nom" : nom,
+			"prenom" : prenom,
+			"email" : email,
+			"fonction" : fonction,
+			"file" : file
+		};
+		descJsonObjects.push(jsonObject);
+		//ajout dans le tableau des description
+		bd.descriptions = descJsonObjects;
+		localStorage.setItem('bdjson', JSON.stringify(bd));
+		return (true);
+
 	}
 	//methode 1
-	bd = localStorage.getItem('bdjson');
-	if ((bd == "undefined") || (bd == null)) {//ici on doit initialiser la bd
-		var bdjson = {
-			"descriptions" : []
-
-		};
-
-		localStorage.setItem('bdjson', JSON.stringify(bdjson));
-		bd = bdjson;
-
-	} else {
-		bd = JSON.parse(bd);
-		//parsing de objet json
-	}
-	var descJsonObjects = bd.descriptions;
-	var jsonObject = {//creation de json
-		"nom" : nom,
-		"prenom" : prenom,
-		"email" : email,
-		"fonction" : fonction,
-		"file" : file
-	};
-	descJsonObjects.push(jsonObject);
-	//ajout dans le tableau des description
-	bd.descriptions = descJsonObjects;
-	localStorage.setItem('bdjson', JSON.stringify(bd));
-	return (true);
 
 }
 
@@ -98,43 +106,50 @@ function enregistrer_Produit() {
 	var imageProduit = $('#imageProduit').find(":selected").text();
 	var categorieProduit = $('#categorieProduit').find(":selected").text();
 
-	if ((nomProduit == "undefined") || (nomProduit == null) || (descriptionProduit == "undefined") || (descriptionProduit == null) || (imageProduit == "undefined") || (imageProduit == null) || (categorieProduit == "undefined") || (categorieProduit == null)) {
+	TestNom = ((nomProduit == "undefined") || (nomProduit == null) || (nomProduit.trim().length === 0));
+	TestdescriptionProduit = ((descriptionProduit == "undefined") || (descriptionProduit == null) || (descriptionProduit.trim().length === 0));
+	TestcategorieProduit = (((categorieProduit.trim()) === ("selectionner une Categorie".trim())));
+	test = (TestNom || TestdescriptionProduit || TestcategorieProduit);
+	console.log(TestNom);
+	console.log(TestdescriptionProduit);
+	console.log(TestcategorieProduit);
+
+	if (test) {
 		alert("Merci de remplir les champs manquants");
 		retourn(false);
 		//on ne change rien si
-	}
-	//methode 1
-	bdProduit = localStorage.getItem('bdProduitjson');
-	if ((bdProduit == "undefined") || (bdProduit == null)) {//ici on doit initialiser la bd
-		var bdProduitjson = {
-			"Produits" : []
-
-		};
-
-		localStorage.setItem('bdProduitjson', JSON.stringify(bdProduitjson));
-		bdProduit = bdProduitjson;
-
 	} else {
-		bdProduit = JSON.parse(bdProduit);
-		//parsing de objet json
+		//methode 1
+		bdProduit = localStorage.getItem('bdProduitjson');
+		if ((bdProduit == "undefined") || (bdProduit == null)) {//ici on doit initialiser la bd
+			var bdProduitjson = {
+				"Produits" : []
+			};
+
+			localStorage.setItem('bdProduitjson', JSON.stringify(bdProduitjson));
+			bdProduit = bdProduitjson;
+
+		} else {
+			bdProduit = JSON.parse(bdProduit);
+			//parsing de objet json
+		}
+		var descJsonObjects = bdProduit.Produits;
+		var jsonObject = {//creation de json
+			"nomProduit" : nomProduit,
+			"descriptionProduit" : descriptionProduit,
+			"imageProduit" : imageProduit,
+			"categorieProduit" : categorieProduit
+		};
+		descJsonObjects.push(jsonObject);
+		//ajout dans le tableau des description
+		bdProduit.Produits = descJsonObjects;
+		localStorage.setItem('bdProduitjson', JSON.stringify(bdProduit));
+
+		//$( "form:first" ).trigger( "reset" );
+		return (true);
 	}
-	var descJsonObjects = bdProduit.Produits;
-	var jsonObject = {//creation de json
-		"nomProduit" : nomProduit,
-		"descriptionProduit" : descriptionProduit,
-		"imageProduit" : imageProduit,
-		"categorieProduit" : categorieProduit
-	};
-	descJsonObjects.push(jsonObject);
-	//ajout dans le tableau des description
-	bdProduit.Produits = descJsonObjects;
-	localStorage.setItem('bdProduitjson', JSON.stringify(bdProduit));
-	
-	//$( "form:first" ).trigger( "reset" );
-	return (true);
 
 }
-
 
 // ******************** Evennements de la page connexion *************************/
 $(document).ready(function() {
@@ -153,10 +168,7 @@ $(document).ready(function() {
 	$("#enregistrerProduit").click(function() {
 
 		return enregistrer_Produit();
-		
 
 	});
-
-	
 
 });
