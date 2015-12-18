@@ -11,17 +11,19 @@
 		<link rel="stylesheet" type="text/css" href="../../CSS/styleConnexion.css">
 		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../../JavaScript/connexion.js"></script>
-		<script>
-			
-		</script>
+		<script type="text/javascript" src="../../JavaScript/canvas.js"></script>
 
 	</head>
 
-	<body id="pageAcceuil">
+	<body id="pageAcceuil" onload="draw()">
 		<div class="container">
 			<header id="headerAcceuil">
+
 				<div>
-					<a href="../PageAcceuil.html"  target="_self"><img src="../../images/logo.jpg"  width="100px" height="80px"/></a>
+					<a href="../PageAcceuil.html"  target="_self">
+					<canvas id="canvasLogo" width="150" height="150">
+						your browser dosen't support canvas
+					</canvas> </a>
 				</div>
 
 				<nav id"header_Nav">
@@ -133,7 +135,7 @@
 						</form>
 
 					</div>
-
+					<div id="resultat"></div>
 					<div id="formulaireEmploye">
 						<form action="#" method="post" >
 
@@ -142,12 +144,12 @@
 									Vos coordonnées :
 								</legend>
 								<label for="nom">Votre Nom :</label>
-								<input type="text" name="nom" size="20" maxlength="40" id="nom" /> *
-								<label for="prenom">Votre Prenom :</label>
-								<input type="text" name="prenom" size="20" maxlength="40" id="prenom" /> *
-								<label for="email">Votre email :</label>
-								<input type="email" name="email" size="20" maxlength="40" id="email"/> *
-								<label for="fonction">Votre fonction :</label>
+								<input type="text" name="nom" size="20" maxlength="40" id="nom" />
+								* <label for="prenom">Votre Prenom :</label>
+								<input type="text" name="prenom" size="20" maxlength="40" id="prenom" />
+								* <label for="email">Votre email :</label>
+								<input type="email" name="email" size="20" maxlength="40" id="email"/>
+								* <label for="fonction">Votre fonction :</label>
 								<input type="text" name="fonction" size="20" maxlength="40" id="fonction" />
 								<label for="telechargerEmp">Telecharger photo :</label>
 								<input type="file" name="telechargerEmp" />

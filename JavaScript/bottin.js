@@ -12,12 +12,13 @@ $(document).ready(function() {
 		jsonObject = descJsonObjects[i];
 
 		var tbody = '<tr>';
-		tbody = tbody + "<td>" + jsonObject.nom + "</td>";
 		tbody = tbody + "<td>" + jsonObject.prenom + "</td>";
-		tbody = tbody + "<td>" + jsonObject.email + "</td>";
-		tbody = tbody + "<td>" + jsonObject.fonction + "</td>";
-		tbody = tbody + "<td>" + jsonObject.file + "</td></tr>";
-
+		tbody = tbody + "<td>" + jsonObject.nom + "</td>";
+		tbody = tbody + "<td>" + jsonObject.fonction+ "</td>";
+		tbody = tbody + "<td>" + jsonObject.file + "</td>";
+		tbody = tbody + "<td><a href='mailto:" + jsonObject.email + "'>"+ jsonObject.email +"</a></td></tr>";
+		
+		
 		$("#tbody:first").append(tbody);
 		//on ajoute à la fin de l'élément
 	}

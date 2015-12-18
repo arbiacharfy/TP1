@@ -38,14 +38,13 @@ $(document).ready(function() {
 	}
 
 	$('#Liste_Des_Articles').jstree();
-	$('#Liste_Des_Articles').on("changed.jstree", function (e, data) {
-  console.log(data.selected);
-});
-$('button').on('click', function () {
-  $('#jstree').jstree(true).select_node('child_node_1');
-  $('#jstree').jstree('select_node', 'child_node_1');
-  $.jstree.reference('#jstree').select_node('child_node_1');
-});
+
+
+
+$('#jstree').on("select_node.jstree", function (e, data) { //open google in browser 
+	
+	document.location = data.instance.get_node(data.node, true).children('a').attr('href');
+	});
 
 
 

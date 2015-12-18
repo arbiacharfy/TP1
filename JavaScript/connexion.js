@@ -28,7 +28,7 @@ function SeConnecter() {
 	login = $("#txtLogin").val();
 	pwd = $("#txtPassword").val();
 
-	if (pwd == "inf2005") {
+	if (pwd == "inf2005" && login == "admin") {
 		console.log(pwd);
 		//si le mot de passe est bon
 		sessionStorage.setItem("connecte", "connecte");
@@ -91,6 +91,7 @@ function enregistrer_Employe() {
 		//ajout dans le tableau des description
 		bd.descriptions = descJsonObjects;
 		localStorage.setItem('bdjson', JSON.stringify(bd));
+
 		return (true);
 
 	}
@@ -162,6 +163,8 @@ $(document).ready(function() {
 	});
 	$("#btnEnregistrerEmploye").click(function() {
 
+		if (enregistrer_Employe())
+			$("#resultat").html("<b>Employe ajoute:</b> ");
 		return enregistrer_Employe();
 
 	});

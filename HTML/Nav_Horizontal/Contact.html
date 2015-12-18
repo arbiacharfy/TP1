@@ -8,18 +8,19 @@
 		<meta name="author" content="Arbia CHARFI">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../../CSS/style.css">
-		
-		<style>
-		</style>
+		<script type="text/javascript" src="../../JavaScript/canvas.js"></script>
 
 	</head>
 
-	<body id="pageAcceuil">
-		<!-- // ○ Contact qui affichera le logo et les coordonnées (adresse, télé- phone, courriel) de l’entreprise -->
+	<body id="pageAcceuil" onload="draw()">
 		<div class="container">
 			<header id="headerAcceuil">
+
 				<div>
-					<a href="../PageAcceuil.html"  target="_self"><img src="../../images/logo.jpg"  width="100px" height="80px"/></a>
+					<a href="../PageAcceuil.html"  target="_self">
+					<canvas id="canvasLogo" width="150" height="150">
+						your browser dosen't support canvas
+					</canvas> </a>
 				</div>
 
 				<nav id"header_Nav">
@@ -49,7 +50,6 @@
 									<a href="../PageAcceuil.html">Page d'acceuil</a>
 								</li>
 
-							
 								<li>
 									<a href="../Categories/Apple.html">Apple</a>
 								</li>
@@ -75,7 +75,7 @@
 
 					<p>
 						<dl >
-	
+
 							<dd>
 								<strong>telephone Professionnels</strong> : 03 21 13 12 30
 							</dd>

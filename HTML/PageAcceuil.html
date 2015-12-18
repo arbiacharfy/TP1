@@ -9,29 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../CSS/style.css">
 		<script type="text/javascript" src="../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
-		<script type="application/x-javascript">
-			function draw() {
-				var canvas = document.getElementById("canvasLogo");
-				var ctx = canvas.getContext("2d");
-
-				ctx.fillStyle = "red";
-
-				ctx.beginPath();
-				ctx.moveTo(30, 30);
-				ctx.lineTo(150, 150);
-				ctx.bezierCurveTo(60, 70, 60, 70, 70, 150);
-				ctx.lineTo(30, 30);
-
-				ctx.fillStyle = "red";
-				ctx.font = "20pt Helvetica";
-				ctx.textAlign = "center";
-				ctx.textBaseline = "middle";
-				ctx.fillText("Informatique", 100, 100);
-				ctx.fill();
-			}
-	
-		</script>
-
+		<script type="text/javascript" src="../JavaScript/canvas.js"></script>		
 	</head>
 
 	<body id="pageAcceuil" onload="draw()">
@@ -73,19 +51,19 @@
 
 							<ul>
 								<li >
-									<a href="./Produits/OrdinateursPortables.html" target="moniframe">PC Portable</a>
+									<a href="./Produits/OrdinateursPortables.html"  onclick="Window.open(this.href)" >PC Portable</a>
 								</li>
 								<li >
-									<a href="./Produits/OrdinateursBureau.html" target="moniframe">Ordinateur</a>
+									<a href="./Produits/OrdinateursBureau.html" onclick="Window.open(this.href)">Ordinateur</a>
 								</li>
 								<li >
-									<a href="./Produits/TelephoneCellulaire.html" target="moniframe">Portable</a>
+									<a href="./Produits/TelephoneCellulaire.html" onclick="Window.open(this.href)">Portable</a>
 								</li>
 								<li>
-									<a href="./Produits/Ecouteurs.html" target="moniframe">Ecouteurs</a>
+									<a href="./Produits/Ecouteurs.html" onclick="Window.open(this.href)">Ecouteurs</a>
 								</li>
 								<li>
-									<a href="./Produits/Tablettes.html" target="moniframe">Tablettes</a>
+									<a href="./Produits/Tablettes.html" onclick="Window.open(this.href)">Tablettes</a>
 								</li>
 
 							</ul>
@@ -117,12 +95,12 @@
 					</section>
 
 				</div>
-					<div id="xxxxx"></div>
 				<div id="monIframe" name="moniframe">
-					<iframe width="420" height="315" src="https://www.youtube.com/embed/dXi1FR8VEiA" frameborder="0" allowfullscreen id="iframePageAcceuil" name="moniframe"></iframe>
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/dXi1FR8VEiA" frameborder="0" id="iframePageAcceuil" name="moniframe">
+						votre navigateur ne supporte pas iframe
+					</iframe>
 
 				</div>
-			
 
 			</div>
 
@@ -137,7 +115,7 @@
 					<div>
 						<a href="Historique.html" target="_blank">Historique</a>
 					</div>
-						
+
 				</div>
 
 			</footer>

@@ -37,6 +37,13 @@ $(document).ready(function() {
 		}
 	}
 
-	$('#Liste_Des_Articles').jstree();
+	$('#Liste_Des_Articles').eq(0).jstree();
+	$("#Liste_Des_Articles section header ").on("click", "a", function() {		
+		document.location.href = this;
+	});
+	
+
+
+
 
 });

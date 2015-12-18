@@ -11,15 +11,20 @@
 		<link rel="stylesheet" type="text/css" href="../../JavaScript/jstree/dist/themes/default/style.min.css">
 		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../../JavaScript/jstree/dist/jstree.min.js"></script>
-		<script type="text/javascript" src="../../JavaScript/apple.js"></script>		
+		<script type="text/javascript" src="../../JavaScript/apple.js"></script>
+		<script type="text/javascript" src="../../JavaScript/canvas.js"></script>
 
 	</head>
 
-	<body id="pageAcceuil">
+	<body id="pageAcceuil" onload="draw()">
 		<div class="container">
 			<header id="headerAcceuil">
+
 				<div>
-					<a href="../PageAcceuil.html"  target="_self"><img src="../../images/logo.jpg"  width="100px" height="80px"/></a>
+					<a href="../PageAcceuil.html"  target="_self">
+					<canvas id="canvasLogo" width="150" height="150">
+						your browser dosen't support canvas
+					</canvas> </a>
 				</div>
 
 				<nav id"header_Nav">
@@ -76,12 +81,12 @@
 						<h1>Articles</h1>
 						<div class="menu" id="Liste_Des_Articles">
 							<ul id="ul_Liste_Des_Articles">
-							 <!-- code generer en javascript -->
+								<!-- code generer en javascript -->
 							</ul>
 						</div>
 					</section>
 					<div id="sectionCategories">
-						 <!-- section generer en javascript -->
+						<!-- section generer en javascript -->
 
 					</div>
 

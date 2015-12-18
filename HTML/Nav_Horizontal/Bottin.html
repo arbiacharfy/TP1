@@ -13,25 +13,21 @@
 		<script type="text/javascript" src="../../JavaScript/DataTable/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="../../DataTables-1.10.10/media/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="../../JavaScript/bottin.js"></script>
-
-		<script >
+	<script type="text/javascript" src="../../JavaScript/canvas.js"></script>	
 		
 
-		</script>
-
 	</head>
-	<!-- ○ Bottin qui affichera la liste des employés dans une table de
-	5 colonnes : nom, prénom, fonction, téléphone et courriel. On
-	utilisera le plugin Datatables pour afficher cette table (Suggestion
-	: utilisation en Zero configuration). La table des
-	employés sera constitué à partir des données se trouvant dans
-	localStorage  -->
 
-	<body id="pageAcceuil">
+	<body id="pageAcceuil" onload="draw()">
 		<div class="container">
 			<header id="headerAcceuil">
+
 				<div>
-					<a href="../PageAcceuil.html"  target="_self"><img src="../../images/logo.jpg"  width="100px" height="80px"/></a>
+					<a href="../PageAcceuil.html"  target="_self"> 
+					<canvas id="canvasLogo" width="150" height="150">
+						your browser dosen't support canvas
+					</canvas> 
+					</a>
 				</div>
 
 				<nav id"header_Nav">
@@ -92,7 +88,7 @@
 									<th>Nom</th>
 									<th>Prenom</th>
 									<th>Fonction</th>
-									<th>Telephone</th>
+									<th>Fichier</th>
 									<th>Courriel</th>
 								</tr>
 							</thead>

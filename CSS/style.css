@@ -114,6 +114,8 @@ a {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+	height: 100px;
+	
 }
 
 #headerAcceuil img {
